@@ -9,7 +9,7 @@ include "b2bankapi.php";
  * Ñåêğåòíûé êëş÷ êëèåíòà HashId.
  * Áåğåòñÿ íà ïàíåëè óïğàâëåíèÿ â ğàçäåëå Ñàéòû
  */
-$my_hash_id = "HASH_ID";
+$my_hash_id = "__HASH_ID__";
 
 /**
  * Èäåíòèôèêàòîğ ñàéòà êëèåíòà SiteID.
@@ -34,8 +34,8 @@ $myB2BankAPI = new B2BankAPIClass($my_hash_id, $my_site_id);
 /**
  * Äëÿ ïğèìåğà
  */
-$my_date1 = "12-06-2022";
-$my_date2 = "30-06-2022";
+$my_date1 = "01-09-2022";
+$my_date2 = "28-09-2022";
 
 $myB2BankAPI->ar_params = array(
 	"m_date1" => $my_date1,

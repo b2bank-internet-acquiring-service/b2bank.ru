@@ -15,6 +15,26 @@ class B2BankAPIClass
 
 	var $ar_response = array();
 
+	public function b2bankcompinfo()
+	{
+		$this->__b2bank_query("b2bankcompinfo");
+	}
+
+	public function b2bankcomplisting()
+	{
+		$this->__b2bank_query("b2bankcomplisting");
+	}
+
+	public function b2bankuserslink()
+	{
+		$this->__b2bank_query("b2bankuserslink");
+	}
+
+	public function b2bankusersgroup()
+	{
+		$this->__b2bank_query("b2bankusersgroup");
+	}
+
 	public function b2bankbackreestrinfo()
 	{
 		$this->__b2bank_query("b2bankbackreestrinfo");
@@ -64,6 +84,7 @@ class B2BankAPIClass
 	{
 		if ($curl = curl_init())
 		{
+
 			$this->ar_params["m_hash_id"] = $this->m_hash_id;
 			$this->ar_params["m_site_id"] = $this->m_site_id;
 			$this->ar_params["func"] = $func;
@@ -98,7 +119,7 @@ class B2BankAPIClass
 
 	public function __construct($m_hash_id, $m_site_id)
 	{
-		$this->m_apiurl = "https://www.b2bank.ru/acquiring/api.php";
+		$this->m_apiurl = "https://b2bank.ru/acquiring/api.php";
 
 		$this->m_hash_id = $m_hash_id;
 		$this->m_site_id = $m_site_id;

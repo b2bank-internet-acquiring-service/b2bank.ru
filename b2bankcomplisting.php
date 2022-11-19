@@ -1,7 +1,7 @@
 <?
 
 /**
- * Функция : Получение списка реестров возврата средств на карту плательщика за период
+ * Функция : Получение списка реестров возмещений за период
  */
 include "b2bankapi.php";
 
@@ -36,8 +36,8 @@ $myB2BankAPI = new B2BankAPIClass($my_hash_id, $my_site_id);
 /**
  * Для примера
  */
-$my_date1 = "02-09-2022";
-$my_date2 = "28-09-2022";
+$my_date1 = "20-09-2022";
+$my_date2 = "12-10-2022";
 
 $myB2BankAPI->ar_params = array(
 	"m_date1" => $my_date1,
@@ -47,7 +47,9 @@ $myB2BankAPI->ar_params = array(
 /**
  * Запрос функции
  */
-$myB2BankAPI->b2bankbackreestrlisting();
+$myB2BankAPI->b2bankcomplisting();
+
+
 
 /**
  * Результат работы функции
@@ -59,18 +61,22 @@ if ($myB2BankAPI->ar_response->m_code == 0)
 	 */
 	foreach ($myB2BankAPI->ar_response->ar_reestr as $key => $row)
 	{
-		print $myB2BankAPI->ar_response->ar_reestr[$key]->m_ireestr . "<br>" . 
-			$myB2BankAPI->ar_response->ar_reestr[$key]->m_ireestr_date . "<br>" . 
+		print $myB2BankAPI->ar_response->ar_reestr[$key]->m_icompensation . "<br>" . 
+			$myB2BankAPI->ar_response->ar_reestr[$key]->m_icompensation_date . "<br>" . 
 			$myB2BankAPI->ar_response->ar_reestr[$key]->m_iowner_url . "<br>" . 
-			$myB2BankAPI->ar_response->ar_reestr[$key]->m_isum . "<br>" . "<br>==================<br>";
+			$myB2BankAPI->ar_response->ar_reestr[$key]->m_invoice_sum . "<br>" . 
+			$myB2BankAPI->ar_response->ar_reestr[$key]->m_invoice_client . "<br>" . 
+			$myB2BankAPI->ar_response->ar_reestr[$key]->m_invoice_comission . "<br>" . "<br>==================<br>";
 	}
-	
+
 	foreach ($myB2BankAPI->ar_response->ar_reestr_test as $key => $row)
 	{
-		print $myB2BankAPI->ar_response->ar_reestr_test[$key]->m_ireestr . "<br>" .
-			$myB2BankAPI->ar_response->ar_reestr_test[$key]->m_ireestr_date . "<br>" .
-			$myB2BankAPI->ar_response->ar_reestr_test[$key]->m_iowner_url . "<br>" .
-			$myB2BankAPI->ar_response->ar_reestr_test[$key]->m_isum . "<br>" . "<br>======+++++++++++<br>";
+		print $myB2BankAPI->ar_response->ar_reestr_test[$key]->m_icompensation . "<br>" . 
+			$myB2BankAPI->ar_response->ar_reestr_test[$key]->m_icompensation_date . "<br>" . 
+			$myB2BankAPI->ar_response->ar_reestr_test[$key]->m_iowner_url . "<br>" . 
+			$myB2BankAPI->ar_response->ar_reestr_test[$key]->m_invoice_sum . "<br>" . 
+			$myB2BankAPI->ar_response->ar_reestr_test[$key]->m_invoice_client . "<br>" . 
+			$myB2BankAPI->ar_response->ar_reestr_test[$key]->m_invoice_comission . "<br>" . "<br>==================<br>";
 	}
 } else
 {

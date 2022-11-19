@@ -9,7 +9,7 @@ include "b2bankapi.php";
  * Секретный ключ клиента HashId.
  * Берется на панели управления в разделе Сайты
  */
-$my_hash_id = "HASH_ID";
+$my_hash_id = "__HASH_ID__";
 
 /**
  * Идентификатор сайта клиента SiteID.
@@ -35,7 +35,7 @@ $myB2BankAPI = new B2BankAPIClass($my_hash_id, $my_site_id);
 /**
  * Для примера
  */
-$my_payment = "465";
+$my_payment = "278";
 
 $myB2BankAPI->ar_params = array(
 	"m_ipayment" => $my_payment

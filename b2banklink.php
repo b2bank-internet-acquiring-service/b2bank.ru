@@ -9,13 +9,12 @@ include "b2bankapi.php";
  * Секретный ключ клиента HashId.
  * Берется на панели управления в разделе Сайты
  */
-$my_hash_id = "HASH_ID";
+$my_hash_id = "380949536863ffa0c4ccc88dc008bfb9c725d8e89";
 
 /**
  * Идентификатор сайта клиента SiteID.
- * Берется на панели управления в разделе Сайты
  */
-$my_site_id = "SITE_ID";
+$my_site_id = "9bf31c7ff062936a96d3c8bd1f8f2ff3";
 
 /**
  */
@@ -67,13 +66,13 @@ $myB2BankAPI = new B2BankAPIClass($my_hash_id, $my_site_id);
  * "m_param3" => "", // Дополнительный параметр 3. Не обязательный параметр
  * "m_param4" => "", // Дополнительный параметр 4. Не обязательный параметр
  * "m_param5" => "", // Дополнительный параметр 5. Не обязательный параметр
- * "m_credit" = 1 // 1 - покупка в кредит, 0 - платеж оплаты картой. Необязательное поле. По умолчанию 0
+ * 
  * );
  */
 
 /**
  * Параметры корзины заказа для формирования счета
- */
+ *
 $myB2BankAPI->ar_bags = array(
 	array(
 		"m_items_name_1" => "Игровой компьютер ARENA 5348 Ryzen 3 1200/8 ГБ/AMD Radeon RX 550 2 ГБ/Без HDD/120 ГБ SSD/DOS",
@@ -100,13 +99,14 @@ $myB2BankAPI->ar_bags = array(
 		"m_items_articul_4" => "артикул 1123"
 	)
 );
+*/
 
 /**
  * Параметры запроса для формирования счета
  */
-$my_invoice_sum = "86280.70";
+$my_invoice_sum = "2.70";
 $my_invoice_description = "Компьютерная техника на сумму 86280.70 руб";
-$my_invoice_mail = "info@mysite.ru";
+$my_invoice_mail = "info@foreign-villas.ru";
 
 $myB2BankAPI->ar_params = array(
 	"m_invoice_sum" => $my_invoice_sum,

@@ -1,7 +1,7 @@
 <?
 
 /**
- * Функция : Получение списка сайтов
+ * Функция : Получение списка идентификаторов групп клиентов
  */
 include_once "b2bankapi.php";
 
@@ -33,7 +33,7 @@ $myB2BankAPI->ar_params = array();
 /**
  * Запрос функции
  */
-$myB2BankAPI->b2bankurls();
+$myB2BankAPI->b2bankusersgroup();
 
 /**
  * Результат работы функции
@@ -43,13 +43,10 @@ if ($myB2BankAPI->ar_response->m_code == 0)
 	/**
 	 * При успешном завершении выполняется обработка данных ответа функции
 	 */
-	foreach ($myB2BankAPI->ar_response->ar_urls as $key => $row)
+	foreach ($myB2BankAPI->ar_response->ar_users_group as $key => $row)
 	{
-		print $myB2BankAPI->ar_response->ar_urls[$key]->m_iowner_url . "<br>" .
-			$myB2BankAPI->ar_response->ar_urls[$key]->m_url . "<br>" .
-			$myB2BankAPI->ar_response->ar_urls[$key]->m_url_ok . "<br>" .
-			$myB2BankAPI->ar_response->ar_urls[$key]->m_url_false . "<br>" .
-			$myB2BankAPI->ar_response->ar_urls[$key]->m_istatus . "<br>=================<br>" ;
+		print $myB2BankAPI->ar_response->ar_users_group[$key]->m_iuser_group . "<br>" .
+			$myB2BankAPI->ar_response->ar_users_group[$key]->m_user_group . "<br>=================<br>" ;
 	}
 } else
 {
