@@ -9,12 +9,12 @@ include "b2bankapi.php";
  * Секретный ключ клиента HashId.
  * Берется на панели управления в разделе Сайты
  */
-$my_hash_id = "__HASHID__";
+$my_hash_id = "__HASH_ID__";
 
 /**
  * Идентификатор сайта клиента SiteID.
  */
-$my_site_id = "__SITEID__";
+$my_site_id = "__SITE_ID__";
 
 /**
  */
