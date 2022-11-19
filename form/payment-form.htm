@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN'>
+<html>
+<head>
+<style>
+.form-div {
+	width: 110px;
+	font-size: 18px;
+	display: inline-table;
+}
+.form-input {
+	width: 220px;
+	font-size: 14px;
+	padding: 5px;
+}
+.form-submit {
+	width: 335px;
+	font-size: 22px;
+	padding: 5px;
+	background-color:orange;
+	color:white;
+	border: 0px;
+	padding: 20px;
+	cursor: hand;
+}
+.form-credit-check{
+	width:40px;
+	height:40px;
+}
+</style>
+</head>
+<body>
+<form method='POST' action='https://www.b2bank.ru/acquiring/form.php'>
+			
+<input type='hidden' name='m_hash_id' value='HASH_ID'>
+<input type='hidden' name='m_site_id' value='SITE_ID'>
+			
+<div class='form-div'>Дата счета</div> <input type='text' class='form-input' name='m_invoice_date' value='20-08-2022'><br><br>
+<div class='form-div'>Сумма счета</div> <input type='text'  required='true' class='form-input' name='m_invoice_sum' value='11401.01'><br><br>
+<div class='form-div'>Номер счета</div> <input type='text' class='form-input' name='m_invoice_number' value='1402'><br><br>
+<div class='form-div'>Товар/Услуга</div> <input type='text'  required='true' class='form-input' name='m_invoice_description' value='Оказ1ание услуги по счету 1402'><br><br>
+<div class='form-div'>E-mail (для чека)</div> <input type='text' class='form-input' name='m_invoice_mail' value='support@casa.moscow'><br><br>
+	
+<input type='checkbox' name='m_credit' class='form-credit-check' > Оплата в кредит
+<br><br>
+	
+<input type='hidden' name='m_param1' >
+<input type='hidden' name='m_param2' value='myparam number 21'>
+<input type='hidden' name='m_param3' >
+<input type='hidden' name='m_param4' >
+<input type='hidden' name='m_param5' >
+
+<input type='hidden' name='m_items_name_1' value='Компьютер 1.1 1985'>
+<input type='hidden' name='m_items_quantity_1' value='1'>
+<input type='hidden' name='m_items_price_1' value='11100.11'>
+<input type='hidden' name='m_items_articul_1' value='1122'>
+
+<input type='hidden' name='m_items_name_21' value='Компьютер #1.2 1982'>
+<input type='hidden' name='m_items_quantity_21' value='1'>
+<input type='hidden' name='m_items_price_21' value='100.20'>
+
+<input type='hidden' name='m_items_name_3' value='Компьютер 1.3 1983'>
+<input type='hidden' name='m_items_quantity_3' value='1'>
+<input type='hidden' name='m_items_price_3' value='100.30'>
+<input type='hidden' name='m_items_articul_3' value='#11234'>
+
+<input type='hidden' name='m_items_name_4' value='Компьютер 1.4 1984'>
+<input type='hidden' name='m_items_quantity_4' value='1'>
+<input type='hidden' name='m_items_price_4' value='100.40'>
+<input type='hidden' name='m_items_articul_4' value='113414'>
+
+<input type='submit' class='form-submit' value='Оплатить'>
+</form>
+			
+</body>
+</html>
