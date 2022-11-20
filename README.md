@@ -1,2 +1,3 @@
 # b2bank.ru
-internet acquiring service
+
+Сервис интернет эквайринга без абонентской платы
