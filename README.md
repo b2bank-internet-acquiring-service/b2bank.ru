@@ -2,7 +2,7 @@
 
 API приема платежей банковских карт
 
-\n\n\n
+
 
 
 # b2bankbackreestrinfo.php
